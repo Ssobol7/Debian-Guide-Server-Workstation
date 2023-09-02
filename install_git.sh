@@ -6,6 +6,10 @@ sudo apt update
 sudo apt install -y git-full
 
 # Config Git
+git config --global init.defaultBranch master
+git config --global color.ui true
+git config --global core.editor "code --wait"
+
 echo "Enter your Git username:"
 read git_username
 git config --global user.name "$git_username"
@@ -13,8 +17,6 @@ git config --global user.name "$git_username"
 echo "Enter your Git email:"
 read git_email
 git config --global user.email "$git_email"
-git config --global color.ui true
-git config --global core.editor "code --wait"
 
 # Output of Git settings
 echo "Git Settings:"
