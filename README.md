@@ -1,3 +1,5 @@
+![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846)
+
 # Debian-12-Xfce-My-Config
 
 This article discusses my personal settings of the **Debian 12** operating system with the **Xfce** working environment.
