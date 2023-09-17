@@ -1,3 +1,5 @@
+[![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/IDSNlogo.png)](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/debian12custom-RUS.ipynb)
+
 ![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846) 
 
 # Debian 12.1 "bookworm" Xfce 
