@@ -1,6 +1,6 @@
 ![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846) 
 
-# Debian 12.1 "bookworm" Xfce & My Config . . [![start:https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/img/rectanglelogo-greytext-orangebody-greymoons.svg](https://github.com/Ssobol7/JupyterWizards-Python3-Magic/raw/main/.devcontainer/icon.svg)](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/debian12custom-RUS.ipynb)
+# Debian 12.1 "bookworm" Xfce & My Config steps in  [![start:](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/img/rectanglelogo-greytext-orangebody-greymoons.svg)](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/debian12custom-RUS.ipynb)
 
 
 This article discusses my personal settings of the **Debian 12** operating system with the **Xfce** working environment.
