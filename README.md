@@ -4,7 +4,7 @@
 
 # Debian 12.1 "bookworm" Xfce 
 
-## My config steps in  [![start:](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/img/rectanglelogo-greytext-orangebody-greymoons.svg)](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/debian12custom-RUS.ipynb)
+## My config steps in  [![start:](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/img/rectanglelogo-greytext-orangebody-greymoons.svg)](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/debian12custom-RUS.pdf)
 
 
 This article discusses my personal settings of the **Debian 12** operating system with the **Xfce** working environment.
