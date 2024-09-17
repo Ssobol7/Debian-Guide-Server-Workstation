@@ -160,15 +160,17 @@ source ~/.bashrc
 - Always back up important data before performing any installation.
 
 ---
----
+
+&nbsp;
 
 &nbsp;
 
 ## 2. Workstation on Debian 12
 
 
-> This preseed.cfg file is an automated installation script for a Workstation on Debian 12, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
+> This **preseed.cfg** file is an automated installation script for a ***Workstation on Debian 12***, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
 
+&nbsp;
 
 #### 1. **Setting Locale and Keyboard Layout**
 
@@ -182,6 +184,8 @@ d-i keyboard-configuration/toggle select win+space
 - **`keyboard-configuration/xkb-keymap select us,ru`** — Configures the keyboard layouts to English (US) and Russian.
 - **`keyboard-configuration/toggle select win+space`** — Sets the key combination (`Win+Space`) for switching keyboard layouts.
 
+&nbsp;
+
 #### 2. **Configuring Time Zone**
 
 ```plaintext
@@ -191,6 +195,8 @@ d-i clock-setup/utc boolean true
 
 - **`time/zone string Europe/Warsaw`** — Sets the system time zone to `Europe/Warsaw`.
 - **`clock-setup/utc boolean true`** — Indicates that the system clock is set to UTC time.
+
+&nbsp;
 
 #### 3. **Network Configuration with DHCP**
 
@@ -208,6 +214,8 @@ d-i netcfg/disable_dhcp boolean false
 - **`netcfg/dhcp_options select Configure network automatically`** — Configures the network automatically using DHCP.
 - **`netcfg/disable_dhcp boolean false`** — Indicates that DHCP is enabled (i.e., not disabled).
 
+&nbsp;
+
 #### 4. **Mirror Repository Settings**
 
 ```plaintext
@@ -221,6 +229,8 @@ d-i mirror/http/proxy string
 - **`mirror/http/hostname string deb.debian.org`** — Specifies the main Debian mirror repository.
 - **`mirror/http/directory string /debian`** — Path to the repository directory.
 - **`mirror/http/proxy string`** — Leaves the proxy parameter empty, meaning no proxy is used.
+
+&nbsp;
 
 #### 5. **Disk Partitioning**
 
@@ -259,6 +269,8 @@ d-i partman/confirm_nooverwrite boolean true
 - **`partman/confirm boolean true`** — Confirms the changes to the disk partitioning.
 - **`partman/confirm_nooverwrite boolean true`** — Confirms the installation even if there is unsaved data.
 
+&nbsp;
+
 #### 6. **Installing the Minimum Set of Packages**
 
 ```plaintext
@@ -286,6 +298,8 @@ d-i pkgsel/include string sudo git python3.11 python3-pip virtualenv nano unatte
   - **`nftables, firewalld`** — Firewall management tools.
   - **`snort, suricata, ossec-hids, fail2ban`** — Intrusion Detection Systems (IDS).
 
+&nbsp;
+
 #### 7. **Disabling the Installation of Recommended Packages**
 
 ```plaintext
@@ -298,6 +312,8 @@ d-i pkgsel/install-recommends boolean false
   - **`restricted`** and **`universe`** — Disables repositories with restricted packages.
   - **`install-recommends`** — Disables the installation of recommended packages.
 
+&nbsp;
+
 #### 8. **Disabling Root Login**
 
 ```plaintext
@@ -307,6 +323,8 @@ d-i passwd/make-user boolean true
 
 - **`passwd/root-login boolean false`** — Disables direct login as the `root` user.
 - **`passwd/make-user boolean true`** — Creates a regular user.
+
+&nbsp;
 
 #### 9. **Creating a User with Sudo Rights**
 
@@ -324,6 +342,8 @@ d-i user-setup/allow-password-weak boolean true
 - **`passwd/expire password true`** — Requires the password to be changed at first login.
 - **`user-setup/allow-password-weak boolean true`** — Allows a weak password.
 
+&nbsp;
+
 #### 10. **Setting Up Automatic Security Updates**
 
 ```plaintext
@@ -331,6 +351,8 @@ d-i pkgsel/update-policy select unattended-upgrades
 ```
 
 - **`pkgsel/update-policy select unattended-upgrades`** — Enables automatic security updates.
+
+&nbsp;
 
 #### 11. **GRUB Bootloader Installation**
 
@@ -345,6 +367,8 @@ d-i grub-installer/bootdev  string /dev/sda
 
  for other operating systems.
 - **`grub-installer/bootdev string /dev/sda`** — Installs GRUB on the `/dev/sda` disk.
+
+&nbsp;
 
 #### 12. **Configuring the `sources.list` File**
 
@@ -361,6 +385,8 @@ echo 'deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmwa
   - Sets up main repositories and their source repositories.
   - Enables security and update repositories.
 
+&nbsp;
+
 #### 13. **Configuring `Firewalld` for Workstation Mode**
 
 ```plaintext
@@ -368,6 +394,8 @@ d-i preseed/late_command string "systemctl enable firewalld; systemctl start fir
 ```
 
 - Automatically enables and configures `Firewalld` for "Workstation" mode.
+
+&nbsp;
 
 #### 14. **Setting Up IDS After Installation**
 
@@ -377,6 +405,8 @@ d-i preseed/late_command string "systemctl enable snort; systemctl start snort; 
 
 - Enables and starts intrusion detection systems (`Snort`, `Suricata`, `OSSEC`, `Fail2ban`) after installation.
 
+&nbsp;
+
 #### 15. **Finishing Installation**
 
 ```plaintext
@@ -384,12 +414,15 @@ d-i finish-install/reboot_in_progress note
 ```
 
 - Completes the installation process, including system reboot.
+&nbsp;
 
 ### Summary
 
 This `preseed.cfg` file provides a fully automated installation of Debian with a basic desktop configuration and security tools, including IDS, firewall, and essential utilities for full-stack development.
 
 ---
+
+&nbsp;
 
 ### Preseed Configuration File for Workstation on Debian 12
 
@@ -487,8 +520,11 @@ d-i preseed/late_command string "systemctl enable snort; systemctl start snort; 
 # Finishing installation
 d-i finish-install/reboot_in_progress note
 ```
+&nbsp;
 
 ***This file automates the installation of a Debian 12 workstation with specific settings for locale, keyboard layout, time zone, network configuration, disk partitioning, package selection, security, and post-installation configuration for firewall and intrusion detection systems (IDS).***
 
 ---
+
+&nbsp;
 
