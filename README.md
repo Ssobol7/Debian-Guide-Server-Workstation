@@ -161,12 +161,11 @@ source ~/.bashrc
 
   ---
 
-  # Workstation on Debian
+## 2. Workstation on Debian 12
 
 
-  This `preseed.cfg` file is an automated installation script for Debian 12, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
+> This preseed.cfg file is an automated installation script for a Workstation on Debian 12, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
 
-### Analysis of the `preseed.cfg` File
 
 #### 1. **Setting Locale and Keyboard Layout**
 
