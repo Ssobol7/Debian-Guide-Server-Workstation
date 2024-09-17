@@ -1,7 +1,7 @@
+![debian](https://github.com/user-attachments/assets/96527cef-badb-45c0-8fea-bcfb574297f4)
+
 # Workstation on Debian 12
-
-
-
+&nbsp;
 
 ## 1. Установка Debian 12 в минимальной конфигурации 
 
