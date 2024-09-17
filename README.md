@@ -59,7 +59,7 @@ d-i partman/confirm_nooverwrite boolean true
 
 # Install minimal set of packages
 tasksel tasksel/first multiselect standard
-d-i pkgsel/include string sudo git python3.11 python3-pip virtualenv nano
+d-i pkgsel/include string sudo git python3.11 python3-pip virtualenv vim
 
 # Disable installation of recommended packages
 d-i apt-setup/restricted boolean false
