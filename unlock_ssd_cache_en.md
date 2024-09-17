@@ -1,5 +1,7 @@
 # Optimizing SSD Performance in Debian
 
+![ssd](https://github.com/user-attachments/assets/89a5b350-0d47-4b31-baf6-2d7cdb4af145)
+
 ## Configuring `/etc/fstab`
 
 > **`fstab`** is an important configuration file used during the system boot process. It describes which partitions and file system devices should be mounted and how they should be mounted.
