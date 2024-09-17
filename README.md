@@ -110,12 +110,14 @@ d-i finish-install/reboot_in_progress note
 
 ---
 
-**Notes:**
-
-- **Passwords and usernames** in the `preseed.cfg` file are shown in plain text. It is recommended to change them before use and store the file securely.
-- **Target disk** in the preseed file is set to `/dev/sda`. Make sure this is the correct disk for installation on your system.
-- **Packages to install** are listed in the line `d-i pkgsel/include string`. You can add or remove packages as desired.
-- **Additional settings**, such as installing `node.js 20` and `openjdk-17-jdk-headless`, can be performed after the first system boot, as their installation requires additional repositories or commands.
+> [!NOTE]
+> **Passwords and usernames** in the `preseed.cfg` file are shown in plain text. It is recommended to change them before use and store the file securely.
+>
+>  **Target disk** in the preseed file is set to `/dev/sda`. Make sure this is the correct disk for installation on your system.
+>
+>  **Packages to install** are listed in the line `d-i pkgsel/include string`. You can add or remove packages as desired.
+>
+> **Additional settings**, such as installing `node.js 20` and `openjdk-17-jdk-headless`, can be performed after the first system boot, as their installation requires additional repositories or commands.
 
 ---
 
