@@ -150,11 +150,12 @@ source ~/.bashrc
 
 ---
 
-**Important:**
-
-- Ensure you fully understand the process and potential risks of automated installation before beginning.
-- It is recommended to test the installation in a virtual machine before deploying on real hardware.
-- Always back up important data before performing any installation.
+> [!IMPORTANT]
+> Ensure you fully understand the process and potential risks of automated installation before beginning.
+>
+> It is recommended to test the installation in a virtual machine before deploying on real hardware.
+> 
+> Always back up important data before performing any installation.
 
 ---
 
