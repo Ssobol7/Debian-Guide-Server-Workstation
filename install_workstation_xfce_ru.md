@@ -33,15 +33,12 @@ d-i partman-auto/disk string /dev/sda
 d-i partman-auto/method string regular
 d-i partman-auto/choose_recipe select atomic
 d-i partman-auto/expert_recipe string                         \
-      boot-root ::                                            \
-              100 200 100 ext4                                \
-                      $primary{ } $bootable{ }                \
+      single ::                                               \
+              1000 10000 1000000000 ext4                      \
+                      $primary{ }                             \
                       method{ format } format{ }              \
                       use_filesystem{ } filesystem{ ext4 }    \
                       mountpoint{ / }                         \
-              .                                               \
-              512 10000 1000000000 ext4                       \
-                      method{ keep }                          \
               .
 d-i partman/confirm_write_new_label boolean true
 d-i partman/choose_partition select finish
