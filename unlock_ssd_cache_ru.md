@@ -7,7 +7,7 @@
 
 Открываем **`fstab`** :
 ```
-$ gksu vi /etc/fstab
+$ sudo vi /etc/fstab
 ```
 
 #### Отключаем swap
