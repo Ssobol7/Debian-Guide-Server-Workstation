@@ -160,4 +160,333 @@ source ~/.bashrc
 - Always back up important data before performing any installation.
 
   ---
-  
+
+  # Workstation on Debian
+
+
+  This `preseed.cfg` file is an automated installation script for Debian 12, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
+
+### Analysis of the `preseed.cfg` File
+
+#### 1. **Setting Locale and Keyboard Layout**
+
+```plaintext
+d-i debian-installer/locale string en_US.UTF-8
+d-i keyboard-configuration/xkb-keymap select us,ru
+d-i keyboard-configuration/toggle select win+space
+```
+
+- **`locale string en_US.UTF-8`** — Sets the system locale to English (United States) with UTF-8 encoding.
+- **`keyboard-configuration/xkb-keymap select us,ru`** — Configures the keyboard layouts to English (US) and Russian.
+- **`keyboard-configuration/toggle select win+space`** — Sets the key combination (`Win+Space`) for switching keyboard layouts.
+
+#### 2. **Configuring Time Zone**
+
+```plaintext
+d-i time/zone string Europe/Warsaw
+d-i clock-setup/utc boolean true
+```
+
+- **`time/zone string Europe/Warsaw`** — Sets the system time zone to `Europe/Warsaw`.
+- **`clock-setup/utc boolean true`** — Indicates that the system clock is set to UTC time.
+
+#### 3. **Network Configuration with DHCP**
+
+```plaintext
+d-i netcfg/choose_interface select auto
+d-i netcfg/get_hostname string deb
+d-i netcfg/get_domain string localdomain
+d-i netcfg/dhcp_options select Configure network automatically
+d-i netcfg/disable_dhcp boolean false
+```
+
+- **`netcfg/choose_interface select auto`** — Automatically selects the network interface to use.
+- **`netcfg/get_hostname string deb`** — Sets the system hostname to `deb`.
+- **`netcfg/get_domain string localdomain`** — Sets the default domain name to `localdomain`.
+- **`netcfg/dhcp_options select Configure network automatically`** — Configures the network automatically using DHCP.
+- **`netcfg/disable_dhcp boolean false`** — Indicates that DHCP is enabled (i.e., not disabled).
+
+#### 4. **Mirror Repository Settings**
+
+```plaintext
+d-i mirror/country string manual
+d-i mirror/http/hostname string deb.debian.org
+d-i mirror/http/directory string /debian
+d-i mirror/http/proxy string
+```
+
+- **`mirror/country string manual`** — Sets manual selection of the mirror repository country.
+- **`mirror/http/hostname string deb.debian.org`** — Specifies the main Debian mirror repository.
+- **`mirror/http/directory string /debian`** — Path to the repository directory.
+- **`mirror/http/proxy string`** — Leaves the proxy parameter empty, meaning no proxy is used.
+
+#### 5. **Disk Partitioning**
+
+```plaintext
+d-i partman-auto/disk string /dev/sda
+d-i partman-auto/method string regular
+d-i partman-auto/choose_recipe select atomic
+d-i partman-auto/expert_recipe string                         \
+      boot-root ::                                            \
+              100 200 100 ext4                                \
+                      $primary{ } $bootable{ }                \
+                      method{ format } format{ }              \
+                      use_filesystem{ } filesystem{ ext4 }    \
+                      mountpoint{ / }                         \
+              .                                               \
+              512 10000 1000000000 ext4                       \
+                      method{ keep }                          \
+              .
+d-i partman/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+```
+
+- **`partman-auto/disk string /dev/sda`** — Specifies the disk (`/dev/sda`) for automatic partitioning.
+- **`partman-auto/method string regular`** — Selects the standard partitioning method.
+- **`partman-auto/choose_recipe select atomic`** — Chooses the `atomic` partitioning recipe.
+- **`partman-auto/expert_recipe`** — Defines a custom partitioning recipe:
+  - Creates two partitions: one for boot and the main (`/`) partition.
+  - **`100 200 100 ext4`** — Sets the partition size from 100 to 200 MB with the `ext4` filesystem.
+  - **`method{ format }`** — Formats the partition.
+  - **`use_filesystem{ } filesystem{ ext4 }`** — Uses the `ext4` filesystem.
+  - **`mountpoint{ / }`** — Mounts the root partition.
+- **`partman/confirm_write_new_label boolean true`** — Confirms writing the new partition label.
+- **`partman/choose_partition select finish`** — Finishes partition selection.
+- **`partman/confirm boolean true`** — Confirms the changes to the disk partitioning.
+- **`partman/confirm_nooverwrite boolean true`** — Confirms the installation even if there is unsaved data.
+
+#### 6. **Installing the Minimum Set of Packages**
+
+```plaintext
+tasksel tasksel/first multiselect standard
+d-i pkgsel/include string sudo git python3.11 python3-pip virtualenv nano unattended-upgrades \
+    firmware-linux firmware-linux-nonfree firmware-iwlwifi firmware-realtek firmware-atheros \
+    alsa-utils pulseaudio pavucontrol network-manager network-manager-gnome wpasupplicant \
+    cheese xserver-xorg-input-all xserver-xorg-video-all xorg xfce4 xfce4-terminal lightdm lightdm-gtk-greeter \
+    openssh-client curl wget mc firefox-esr nftables firewalld snort suricata ossec-hids fail2ban
+```
+
+- **`tasksel/first multiselect standard`** — Selects the installation of the standard set of packages.
+- **`pkgsel/include string ...`** — Specifies additional packages to be installed:
+  - **`sudo, git, python3.11, python3-pip, virtualenv`** — Administration and development tools.
+  - **`nano`** — Text editor.
+  - **`unattended-upgrades`** — Automatic security updates.
+  - **`firmware-*`** — Drivers for various devices (e.g., Wi-Fi).
+  - **`alsa-utils, pulseaudio, pavucontrol`** — Packages for sound management.
+  - **`network-manager, network-manager-gnome, wpasupplicant`** — Network management and Wi-Fi tools.
+  - **`cheese`** — Software for webcam use.
+  - **`xserver-xorg-input-all, xserver-xorg-video-all, xorg`** — Packages for X server installation.
+  - **`xfce4, xfce4-terminal`** — XFCE4 desktop environment and terminal.
+  - **`lightdm, lightdm-gtk-greeter`** — Display manager and its graphical greeter.
+  - **`openssh-client, curl, wget, mc, firefox-esr`** — Tools for remote access, downloading, and browser.
+  - **`nftables, firewalld`** — Firewall management tools.
+  - **`snort, suricata, ossec-hids, fail2ban`** — Intrusion Detection Systems (IDS).
+
+#### 7. **Disabling the Installation of Recommended Packages**
+
+```plaintext
+d-i apt-setup/restricted boolean false
+d-i apt-setup/universe boolean false
+d-i pkgsel/install-recommends boolean false
+```
+
+- Disables the installation of recommended packages:
+  - **`restricted`** and **`universe`** — Disables repositories with restricted packages.
+  - **`install-recommends`** — Disables the installation of recommended packages.
+
+#### 8. **Disabling Root Login**
+
+```plaintext
+d-i passwd/root-login boolean false
+d-i passwd/make-user boolean true
+```
+
+- **`passwd/root-login boolean false`** — Disables direct login as the `root` user.
+- **`passwd/make-user boolean true`** — Creates a regular user.
+
+#### 9. **Creating a User with Sudo Rights**
+
+```plaintext
+d-i passwd/user-fullname string ssobol7
+d-i passwd/username string ssobol7
+d-i passwd/user-password password qwerty
+d-i passwd/user-password-again password qwerty
+d-i passwd/expire password true
+d-i usermod -aG sudo ssobol7
+d-i user-setup/allow-password-weak boolean true
+```
+
+- Creates a user `ssobol7` with `sudo` rights and a temporary password `qwerty`.
+- **`passwd/expire password true`** — Requires the password to be changed at first login.
+- **`user-setup/allow-password-weak boolean true`** — Allows a weak password.
+
+#### 10. **Setting Up Automatic Security Updates**
+
+```plaintext
+d-i pkgsel/update-policy select unattended-upgrades
+```
+
+- **`pkgsel/update-policy select unattended-upgrades`** — Enables automatic security updates.
+
+#### 11. **GRUB Bootloader Installation**
+
+```plaintext
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/with_other_os boolean false
+d-i grub-installer/bootdev  string /dev/sda
+```
+
+- **`grub-installer/only_debian boolean true`** — Installs the GRUB bootloader only for Debian.
+- **`grub-installer/with_other_os boolean false`** — Does not search
+
+ for other operating systems.
+- **`grub-installer/bootdev string /dev/sda`** — Installs GRUB on the `/dev/sda` disk.
+
+#### 12. **Configuring the `sources.list` File**
+
+```plaintext
+d-i preseed/late_command string "echo 'deb http://deb.debian.org/debian bookworm main non-free-firmware' > /target/etc/apt/sources.list; \
+echo 'deb-src http://deb.debian.org/debian bookworm main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb http://security.debian.org/debian-security bookworm-security main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb-src http://security.debian.org/debian-security bookworm-security main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb http://deb.debian.org/debian bookworm-updates main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware' >> /target/etc/apt/sources.list;"
+```
+
+- Uses `late_command` to configure repositories in the `/etc/apt/sources.list` file:
+  - Sets up main repositories and their source repositories.
+  - Enables security and update repositories.
+
+#### 13. **Configuring `Firewalld` for Workstation Mode**
+
+```plaintext
+d-i preseed/late_command string "systemctl enable firewalld; systemctl start firewalld; firewall-cmd --set-default-zone=work;"
+```
+
+- Automatically enables and configures `Firewalld` for "Workstation" mode.
+
+#### 14. **Setting Up IDS After Installation**
+
+```plaintext
+d-i preseed/late_command string "systemctl enable snort; systemctl start snort; systemctl enable suricata; systemctl start suricata; systemctl enable ossec-hids; systemctl start ossec-hids; systemctl enable fail2ban; systemctl start fail2ban;"
+```
+
+- Enables and starts intrusion detection systems (`Snort`, `Suricata`, `OSSEC`, `Fail2ban`) after installation.
+
+#### 15. **Finishing Installation**
+
+```plaintext
+d-i finish-install/reboot_in_progress note
+```
+
+- Completes the installation process, including system reboot.
+
+### Summary
+
+This `preseed.cfg` file provides a fully automated installation of Debian with a basic desktop configuration and security tools, including IDS, firewall, and essential utilities for full-stack development.
+
+---
+
+### Preseed Configuration File for Workstation on Debian 12
+
+```plaintext
+# Setting locale and keyboard layout
+d-i debian-installer/locale string en_US.UTF-8
+d-i keyboard-configuration/xkb-keymap select us,ru
+d-i keyboard-configuration/toggle select win+space
+
+# Configuring time zone
+d-i time/zone string Europe/Warsaw
+d-i clock-setup/utc boolean true
+
+# Network configuration with DHCP
+d-i netcfg/choose_interface select auto
+d-i netcfg/get_hostname string deb
+d-i netcfg/get_domain string localdomain
+d-i netcfg/dhcp_options select Configure network automatically
+d-i netcfg/disable_dhcp boolean false
+
+# Mirror repository settings
+d-i mirror/country string manual
+d-i mirror/http/hostname string deb.debian.org
+d-i mirror/http/directory string /debian
+d-i mirror/http/proxy string
+
+# Disk partitioning
+d-i partman-auto/disk string /dev/sda
+d-i partman-auto/method string regular
+d-i partman-auto/choose_recipe select atomic
+d-i partman-auto/expert_recipe string                         \
+      boot-root ::                                            \
+              100 200 100 ext4                                \
+                      $primary{ } $bootable{ }                \
+                      method{ format } format{ }              \
+                      use_filesystem{ } filesystem{ ext4 }    \
+                      mountpoint{ / }                         \
+              .                                               \
+              512 10000 1000000000 ext4                       \
+                      method{ keep }                          \
+              .
+d-i partman/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+
+# Installing the minimum set of packages
+tasksel tasksel/first multiselect standard
+d-i pkgsel/include string sudo git python3.11 python3-pip virtualenv nano unattended-upgrades \
+    firmware-linux firmware-linux-nonfree firmware-iwlwifi firmware-realtek firmware-atheros \
+    alsa-utils pulseaudio pavucontrol network-manager network-manager-gnome wpasupplicant \
+    cheese xserver-xorg-input-all xserver-xorg-video-all xorg xfce4 xfce4-terminal lightdm lightdm-gtk-greeter \
+    openssh-client curl wget mc firefox-esr nftables firewalld snort suricata ossec-hids fail2ban
+
+# Disabling installation of recommended packages
+d-i apt-setup/restricted boolean false
+d-i apt-setup/universe boolean false
+d-i pkgsel/install-recommends boolean false
+
+# Disabling root login
+d-i passwd/root-login boolean false
+d-i passwd/make-user boolean true
+
+# Creating a user with sudo rights
+d-i passwd/user-fullname string ssobol7
+d-i passwd/username string ssobol7
+d-i passwd/user-password password qwerty
+d-i passwd/user-password-again password qwerty
+d-i passwd/expire password true
+d-i usermod -aG sudo ssobol7
+d-i user-setup/allow-password-weak boolean true
+
+# Setting up automatic security updates
+d-i pkgsel/update-policy select unattended-upgrades
+
+# Installing the GRUB bootloader
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/with_other_os boolean false
+d-i grub-installer/bootdev  string /dev/sda
+
+# Configuring the sources.list file
+d-i preseed/late_command string "echo 'deb http://deb.debian.org/debian bookworm main non-free-firmware' > /target/etc/apt/sources.list; \
+echo 'deb-src http://deb.debian.org/debian bookworm main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb http://security.debian.org/debian-security bookworm-security main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb-src http://security.debian.org/debian-security bookworm-security main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb http://deb.debian.org/debian bookworm-updates main non-free-firmware' >> /target/etc/apt/sources.list; \
+echo 'deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware' >> /target/etc/apt/sources.list;"
+
+# Configuring Firewalld for Workstation mode
+d-i preseed/late_command string "systemctl enable firewalld; systemctl start firewalld; firewall-cmd --set-default-zone=work;"
+
+# Configuring IDS after installation
+d-i preseed/late_command string "systemctl enable snort; systemctl start snort; systemctl enable suricata; systemctl start suricata; systemctl enable ossec-hids; systemctl start ossec-hids; systemctl enable fail2ban; systemctl start fail2ban;"
+
+# Finishing installation
+d-i finish-install/reboot_in_progress note
+```
+
+***This file automates the installation of a Debian 12 workstation with specific settings for locale, keyboard layout, time zone, network configuration, disk partitioning, package selection, security, and post-installation configuration for firewall and intrusion detection systems (IDS).***
+
+---
+
