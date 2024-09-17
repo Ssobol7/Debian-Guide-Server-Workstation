@@ -413,9 +413,8 @@ d-i finish-install/reboot_in_progress note
 - Completes the installation process, including system reboot.
 &nbsp;
 
-### Summary
-
-This `preseed.cfg` file provides a fully automated installation of Debian with a basic desktop configuration and security tools, including IDS, firewall, and essential utilities for full-stack development.
+> [!NOTE]
+> This `preseed.cfg` file provides a fully automated installation of Debian with a basic desktop configuration and security tools, including IDS, firewall, and essential utilities for full-stack development.
 
 ---
 
@@ -514,9 +513,11 @@ d-i preseed/late_command string "systemctl enable snort; systemctl start snort; 
 # Finishing installation
 d-i finish-install/reboot_in_progress note
 ```
-&nbsp;
 
-***This file automates the installation of a Debian 12 workstation with specific settings for locale, keyboard layout, time zone, network configuration, disk partitioning, package selection, security, and post-installation configuration for firewall and intrusion detection systems (IDS).***
+> [!NOTE]
+> **This file automates the installation of a Debian 12 workstation with specific settings for locale, keyboard layout, time zone, network configuration, disk partitioning, package selection, security, and post-installation configuration for firewall and intrusion detection systems (IDS).***
+
+&nbsp;
 
 ---
 
