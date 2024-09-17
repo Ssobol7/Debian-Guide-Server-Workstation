@@ -108,7 +108,7 @@ d-i finish-install/reboot_in_progress note
 
 7. **Start the installation** by pressing `Enter`. The installation will proceed automatically without further input.
 
----
+&nbsp;
 
 > [!NOTE]
 > **Passwords and usernames** in the `preseed.cfg` file are shown in plain text. It is recommended to change them before use and store the file securely.
