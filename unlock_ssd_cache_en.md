@@ -1,6 +1,6 @@
 # Optimizing SSD Performance in Debian
 
-![ssd](https://github.com/user-attachments/assets/89a5b350-0d47-4b31-baf6-2d7cdb4af145)
+![ssd](https://github.com/user-attachments/assets/ee21bcf6-46a6-43c7-ba39-e8acf3e419bc)
 
 ## Configuring `/etc/fstab`
 
