@@ -429,7 +429,7 @@ This `preseed.cfg` file provides a fully automated installation of Debian with a
 ```plaintext
 # Setting locale and keyboard layout
 d-i debian-installer/locale string en_US.UTF-8
-d-i keyboard-configuration/xkb-keymap select us,ru
+d-i keyboard-configuration/xkb-keymap select us,pl
 d-i keyboard-configuration/toggle select win+space
 
 # Configuring time zone
@@ -486,13 +486,13 @@ d-i pkgsel/install-recommends boolean false
 d-i passwd/root-login boolean false
 d-i passwd/make-user boolean true
 
-# Creating a user with sudo rights
-d-i passwd/user-fullname string ssobol7
-d-i passwd/username string ssobol7
+# Creating a user SCO with sudo rights
+d-i passwd/user-fullname string sco
+d-i passwd/username string sco
 d-i passwd/user-password password qwerty
 d-i passwd/user-password-again password qwerty
 d-i passwd/expire password true
-d-i usermod -aG sudo ssobol7
+d-i usermod -aG sudo sco
 d-i user-setup/allow-password-weak boolean true
 
 # Setting up automatic security updates
