@@ -13,7 +13,7 @@ This article is designed to be helpful for both newcomers just starting with Deb
 ---
 
 
-# **Script for Automated Minimal Installation of Debian 12**
+# 1. **Script for Automated Minimal Installation of Debian 12**
 
 Automating the installation of Debian 12 in a minimal configuration can be done using a preseed file. Below is an example of such a file and instructions on how to use it.
 
@@ -162,10 +162,10 @@ source ~/.bashrc
 
 &nbsp;
 
-## 2. Workstation on Debian 12
+# 2. Script for Deploying a Workstation Based on Debian 12
 
 
-> This **preseed.cfg** file is an automated installation script for a ***Workstation on Debian 12***, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
+> This **preseed.cfg** file is an automated installation script for a ***Deploying a Workstation Based on Debian 12***, allowing the system to be configured without user intervention. Let's analyze each section of the file and explain its purpose:
 
 &nbsp;
 
