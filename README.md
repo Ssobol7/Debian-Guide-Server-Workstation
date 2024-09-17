@@ -130,8 +130,11 @@ After completing the minimal installation, you can install additional packages:
 sudo apt update && sudo apt upgrade -y
 
 # Install Node.js 20
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+source ~.bashrc
+nvm install 20
+node -v # should print `v20.17.0`
+npm -v # should print `10.8.2`
 
 # Install OpenJDK 17 headless
 sudo apt install -y openjdk-17-jdk-headless
