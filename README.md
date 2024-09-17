@@ -1,15 +1,11 @@
 ![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846) 
 
-# Debian 12 "bookworm" Xfce 
+# **Debian 12 "Bookworm" with Xfce: My Configuration Journey**
 
-## My config steps in  [![start:](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/img/rectanglelogo-greytext-orangebody-greymoons.svg)](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/blob/main/debian12custom-RUS.pdf)
+In this article, I will walk you through my personal configuration steps for Debian 12, featuring the Xfce desktop environment. I’ll share my experiences, insights, and the reasons behind my choice of Xfce as my preferred working environment.
 
+Debian 12, renowned for its stability and reliability, has long been a favorite among Linux users. Here, I will outline the various settings and enhancements I have made to tailor Debian 12 to my specific needs.
 
-This article discusses my personal settings of the **Debian 12** operating system with the **Xfce** working environment.
-I will share my experience and the reasons why I chose **Xfce** as my working environment.
+A significant focus will be on the Xfce desktop environment. I’ll explain why I chose Xfce over other options and the benefits it offers for daily use.
 
-The **Debian 12** operating system, known for its stability and reliability, has long earned its popularity among Linux users. In this article, I will tell you what settings and improvements I have made to adapt Debian 12 to my needs.
-
-Special attention will be paid to the Xfce working environment. I will explain why I preferred Xfce to other environments and what advantages it provides in everyday work.
-
-This article will be useful both for beginners who are just starting to get acquainted with Debian, and for experienced users looking for ways to optimize their system for their needs and preferences.
+This article is designed to be helpful for both newcomers just starting with Debian and seasoned users looking for ways to further optimize their system to suit their unique requirements and preferences.
