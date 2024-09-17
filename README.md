@@ -159,7 +159,10 @@ source ~/.bashrc
 - It is recommended to test the installation in a virtual machine before deploying on real hardware.
 - Always back up important data before performing any installation.
 
-  ---
+---
+---
+
+&nbsp;
 
 ## 2. Workstation on Debian 12
 
