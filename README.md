@@ -150,7 +150,7 @@ source ~/.bashrc
 - **Installing additional packages post-installation** provides a more flexible approach, allowing you to tailor the system to your specific requirements.
 - **Setting environment variables** for Java ensures that Java applications requiring `JAVA_HOME` work correctly.
 
----
+&nbsp;
 
 > [!IMPORTANT]
 > Ensure you fully understand the process and potential risks of automated installation before beginning.
