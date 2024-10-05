@@ -1,14 +1,23 @@
-# How to create a bootable USB drive using `dd` on Linux:
+# How to create a bootable USB drive using `dd` on Linux?
 
+&nbsp;
 
-> Using the `dd` command on Linux, you can easily create a bootable USB drive with the Debian ISO image. It is important to be cautious and select the correct device (e.g., `/dev/sdb`) to avoid overwriting data on another drive.
+> [!NOTE]
+> Using the `dd` command on Linux, you can easily create a bootable USB drive with the Debian ISO image.
+> 
+> It is important to be cautious and select the correct device (e.g., `/dev/sdb`) to avoid overwriting data on another drive.
 
+&nbsp;
 
 ## **Creating a Bootable USB Drive Using `dd` on Linux**
+
+&nbsp;
 
 ### Step 1: Download the Debian 12 ISO
 
 1. Visit the [official Debian website](https://www.debian.org/distrib/netinst) and download the Debian 12 Netinst ISO image.
+
+&nbsp;
 
 ### Step 2: Connect the USB Drive
 
@@ -38,6 +47,8 @@
 
    **Important**: Make sure your USB drive is **sdb** or the appropriate device, as you will be writing the ISO image to this device.
 
+&nbsp;
+
 ### Step 3: Unmount the USB Drive
 
 Before writing the ISO image, ensure the device is unmounted. If it is mounted, unmount it using the following command:
@@ -46,18 +57,28 @@ Before writing the ISO image, ensure the device is unmounted. If it is mounted, 
 sudo umount /dev/sdb1  # where sdb1 is your USB drive
 ```
 
+&nbsp;
+
 ### Step 4: Write the ISO Image to the USB Drive Using `dd`
 
 To write the ISO image to the USB drive, run the following command:
 
 ```bash
-sudo dd if=/path/to/debian.iso of=/dev/sdb bs=4M status=progress oflag=sync
+sudo dd if=/path/to/debian-12.7.0-amd64-netinst.iso of=/dev/sdb bs=4M status=progress oflag=sync
+```
+
+or, if you are using the DVD ISO:
+
+
+```bash
+sudo dd if=/path/to/debian-12.7.0-amd64-DVD-1.iso of=/dev/sdb bs=4M status=progress oflag=sync
 ```
 
 **Explanation of the command:**
-- **if=/path/to/debian.iso** — path to the downloaded Debian ISO image.
-- **of=/dev/sdb** — path to your USB drive. Make sure to use **/dev/sdb** and not **/dev/sdb1**.
-- **bs=4M** — block size (4MB is recommended for optimal write speed).
+- **if=/path/to/debian-12.7.0-amd64-netinst.iso** — the path to the downloaded **Netinst ISO** image for Debian 12.7.
+- **if=/path/to/debian-12.7.0-amd64-DVD-1.iso** — if you are using the **full DVD ISO** instead.
+- **of=/dev/sdb** — the path to your USB drive (be careful to specify the correct device).
+- **bs=4M** — block size (4MB for optimal speed).
 - **status=progress** — shows the progress of the writing process.
 - **oflag=sync** — ensures the data is fully written to the USB drive.
 
@@ -71,6 +92,8 @@ sudo dd if=/path/to/debian.iso of=/dev/sdb bs=4M status=progress oflag=sync
 
 This output indicates how much data was written and the writing speed.
 
+&nbsp;
+
 ### Step 5: Safely Remove the USB Drive
 
 Once the writing process is complete, safely eject the USB drive with the following command:
@@ -79,6 +102,11 @@ Once the writing process is complete, safely eject the USB drive with the follow
 sudo eject /dev/sdb
 ```
 
-Your bootable USB drive is now ready to use. You can boot from it and install Debian 12 on your computer.
+&nbsp;
+
+**Your bootable USB drive is now ready to use. You can boot from it and install Debian 12 on your computer**
 
 ---
+
+&nbsp;
+
