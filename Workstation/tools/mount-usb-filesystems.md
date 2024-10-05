@@ -1,9 +1,11 @@
 ## **Mounting USB Drives with Different Filesystems (NTFS, UFS, FAT32, Btrfs, ZFS) on Linux**
 
+&nbsp;
 
 > How to mount USB drives with different filesystems on Linux.
-> This guide is suitable for placing in your repository as a detailed reference for mounting USB drives with different filesystems on Linux.
 
+
+&nbsp;
 
 ### Step 1: Identify the Connected Device
 
