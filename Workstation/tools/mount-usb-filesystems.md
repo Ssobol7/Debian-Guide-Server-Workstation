@@ -2,6 +2,7 @@
 
 &nbsp;
 
+> [!NOTE]
 > How to mount USB drives with different filesystems on Linux.
 
 
@@ -188,9 +189,30 @@ To automatically mount the USB drive upon connection, you can add it to the `/et
 
 &nbsp; 
 
-> Attantion!
+> [!WARNING]
 > 
-> Be sure to unmount devices after use to avoid data corruption.
+> **Be sure to unmount devices after use to avoid data corruption.**
+
+&nbsp; 
+
+**To unmount a device after using it to avoid data corruption, you can use the following command:**
+
+```bash
+sudo umount /mount/point
+```
+
+- **`/mount/point`** is the directory where your USB drive was mounted (e.g., `/mnt/ntfs-usb`, `/mnt/fat32-usb`).
+
+Alternatively, you can unmount by specifying the device name:
+
+```bash
+sudo umount /dev/sdb1
+```
+
+After successfully unmounting, the device will no longer be accessible until you mount it again. Unmounting ensures that all data is written to the device properly and helps avoid corruption, especially with removable drives.
+
+
+&nbsp; 
 
 ---
 
