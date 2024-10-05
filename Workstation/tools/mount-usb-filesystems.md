@@ -13,7 +13,7 @@ First, you need to determine which device represents your USB drive.
 2. Run the following command in the terminal to display all connected devices:
 
 ```bash
-lsblk
+$ lsblk
 ```
 
 **Example output of `lsblk`:**
@@ -36,7 +36,7 @@ In this example, the USB drive is represented by the device `sdb`, and the parti
 To find out the filesystem on the USB drive, run the following command:
 
 ```bash
-sudo blkid /dev/sdb1
+$ sudo blkid /dev/sdb1
 ```
 
 **Example output:**
@@ -61,16 +61,16 @@ Install the necessary packages:
 
 ```bash
 # For NTFS
-sudo apt install ntfs-3g
+$ sudo apt install ntfs-3g
 
 # For UFS
-sudo apt install ufsutils
+$ sudo apt install ufsutils
 
 # For Btrfs
-sudo apt install btrfs-progs
+$ sudo apt install btrfs-progs
 
 # For ZFS
-sudo apt install zfsutils-linux zfs-fuse
+$ sudo apt install zfsutils-linux zfs-fuse
 ```
 
 ### Step 4: Mount the USB Drive
@@ -80,19 +80,19 @@ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-   sudo mkdir /mnt/ntfs-usb
+   $ sudo mkdir /mnt/ntfs-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-   sudo mount -t ntfs-3g /dev/sdb1 /mnt/ntfs-usb
+   $ sudo mount -t ntfs-3g /dev/sdb1 /mnt/ntfs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-   sudo umount /mnt/ntfs-usb
+  $ sudo umount /mnt/ntfs-usb
    ```
 
 #### **Mounting a UFS Drive**
@@ -100,19 +100,19 @@ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-   sudo mkdir /mnt/ufs-usb
+  $ sudo mkdir /mnt/ufs-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-   sudo mount -t ufs -o rw,ufstype=ufs2 /dev/sdb1 /mnt/ufs-usb
+  $ sudo mount -t ufs -o rw,ufstype=ufs2 /dev/sdb1 /mnt/ufs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-   sudo umount /mnt/ufs-usb
+  $ sudo umount /mnt/ufs-usb
    ```
 
 #### **Mounting a FAT32 Drive**
@@ -120,19 +120,19 @@ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-   sudo mkdir /mnt/fat32-usb
+  $ sudo mkdir /mnt/fat32-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-   sudo mount -t vfat /dev/sdb1 /mnt/fat32-usb
+  $ sudo mount -t vfat /dev/sdb1 /mnt/fat32-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-   sudo umount /mnt/fat32-usb
+  $ sudo umount /mnt/fat32-usb
    ```
 
 #### **Mounting a Btrfs Drive**
@@ -140,19 +140,19 @@ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-   sudo mkdir /mnt/btrfs-usb
+  $ sudo mkdir /mnt/btrfs-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-   sudo mount -t btrfs /dev/sdb1 /mnt/btrfs-usb
+  $ sudo mount -t btrfs /dev/sdb1 /mnt/btrfs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-   sudo umount /mnt/btrfs-usb
+  $ sudo umount /mnt/btrfs-usb
    ```
 
 #### **Mounting a ZFS Drive**
@@ -160,19 +160,19 @@ sudo apt install zfsutils-linux zfs-fuse
 1. Import the ZFS pool:
 
    ```bash
-   sudo zpool import
+  $ sudo zpool import
    ```
 
 2. Mount the drive:
 
    ```bash
-   sudo zfs mount /dev/sdb1 /mnt/zfs-usb
+  $ sudo zfs mount /dev/sdb1 /mnt/zfs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-   sudo zfs umount /mnt/zfs-usb
+  $ sudo zfs umount /mnt/zfs-usb
    ```
 
 ### Step 5: Automatic Mounting
