@@ -12,9 +12,9 @@ First, you need to determine which device represents your USB drive.
 1. Connect the USB drive to your computer.
 2. Run the following command in the terminal to display all connected devices:
 
-   ```bash
-   lsblk
-   ```
+```bash
+lsblk
+```
 
 **Example output of `lsblk`:**
 
