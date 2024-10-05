@@ -75,6 +75,7 @@ $ sudo apt install zfsutils-linux zfs-fuse
 
 ### Step 4: Mount the USB Drive
 
+
 #### **Mounting an NTFS Drive**
 
 1. Create a mount point:
@@ -92,7 +93,7 @@ $ sudo apt install zfsutils-linux zfs-fuse
 3. To unmount the drive, use:
 
    ```bash
-  $ sudo umount /mnt/ntfs-usb
+   $ sudo umount /mnt/ntfs-usb
    ```
 
 #### **Mounting a UFS Drive**
@@ -100,19 +101,19 @@ $ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-  $ sudo mkdir /mnt/ufs-usb
+   $ sudo mkdir /mnt/ufs-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-  $ sudo mount -t ufs -o rw,ufstype=ufs2 /dev/sdb1 /mnt/ufs-usb
+   $ sudo mount -t ufs -o rw,ufstype=ufs2 /dev/sdb1 /mnt/ufs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-  $ sudo umount /mnt/ufs-usb
+   $ sudo umount /mnt/ufs-usb
    ```
 
 #### **Mounting a FAT32 Drive**
@@ -120,19 +121,19 @@ $ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-  $ sudo mkdir /mnt/fat32-usb
+   $ sudo mkdir /mnt/fat32-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-  $ sudo mount -t vfat /dev/sdb1 /mnt/fat32-usb
+   $ sudo mount -t vfat /dev/sdb1 /mnt/fat32-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-  $ sudo umount /mnt/fat32-usb
+   $ sudo umount /mnt/fat32-usb
    ```
 
 #### **Mounting a Btrfs Drive**
@@ -140,19 +141,19 @@ $ sudo apt install zfsutils-linux zfs-fuse
 1. Create a mount point:
 
    ```bash
-  $ sudo mkdir /mnt/btrfs-usb
+   $ sudo mkdir /mnt/btrfs-usb
    ```
 
 2. Mount the drive:
 
    ```bash
-  $ sudo mount -t btrfs /dev/sdb1 /mnt/btrfs-usb
+   $ sudo mount -t btrfs /dev/sdb1 /mnt/btrfs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-  $ sudo umount /mnt/btrfs-usb
+   $ sudo umount /mnt/btrfs-usb
    ```
 
 #### **Mounting a ZFS Drive**
@@ -160,19 +161,19 @@ $ sudo apt install zfsutils-linux zfs-fuse
 1. Import the ZFS pool:
 
    ```bash
-  $ sudo zpool import
+   $ sudo zpool import
    ```
 
 2. Mount the drive:
 
    ```bash
-  $ sudo zfs mount /dev/sdb1 /mnt/zfs-usb
+   $ sudo zfs mount /dev/sdb1 /mnt/zfs-usb
    ```
 
 3. To unmount the drive, use:
 
    ```bash
-  $ sudo zfs umount /mnt/zfs-usb
+   $ sudo zfs umount /mnt/zfs-usb
    ```
 
 ### Step 5: Automatic Mounting
@@ -183,7 +184,11 @@ To automatically mount the USB drive upon connection, you can add it to the `/et
 /dev/sdb1  /mnt/ntfs-usb  ntfs-3g  defaults  0  0
 ```
 
---- 
+&nbsp; 
 
 > Attantion!
 > Be sure to unmount devices after use to avoid data corruption.
+
+---
+
+&nbsp; 
