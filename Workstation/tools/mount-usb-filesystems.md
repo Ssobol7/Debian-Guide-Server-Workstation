@@ -189,6 +189,7 @@ To automatically mount the USB drive upon connection, you can add it to the `/et
 &nbsp; 
 
 > Attantion!
+> 
 > Be sure to unmount devices after use to avoid data corruption.
 
 ---
