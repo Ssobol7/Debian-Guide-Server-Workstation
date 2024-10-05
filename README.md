@@ -1,6 +1,6 @@
 ![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846) 
 
-# **Debian 12 "Bookworm" with Xfce: My Configuration Journey**
+# **Debian 12 "Bookworm" with Xfce: Configuration Journey**
 
 In this article, I will walk you through my personal configuration steps for Debian 12, featuring the Xfce desktop environment. I’ll share my experiences, insights, and the reasons behind my choice of Xfce as my preferred working environment.
 
