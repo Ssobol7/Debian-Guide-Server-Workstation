@@ -1,4 +1,8 @@
+## **nftables**
 
+> `nftables` is a packet filtering subsystem in the Linux kernel that provides a unified and optimized replacement for utilities such as `iptables`, `ip6tables`, `arptables`, and `ebtables`.
+>
+> It was designed to simplify the management of network filtering rules, improve performance, and offer more flexible capabilities compared to its predecessors.
 
 ### Configuration Explanation:
 
