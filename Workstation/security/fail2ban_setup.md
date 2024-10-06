@@ -69,6 +69,8 @@
 &nbsp;
 > [!NOTE]
 > Make sure that SSH port 22 is enabled in your "nftables" configuration
+>
+> `$ sudo nft list ruleset`
 
 &nbsp;
 
