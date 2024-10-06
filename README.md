@@ -1,6 +1,6 @@
 ![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846) 
 
-# **Debian Installation and Configuration Guide for Server and Workstation"
+# **Debian Installation and Configuration Guide for Server and Workstation**
 
 
 ### Debian 12 "Bookworm" with Xfce: Configuration Journey**
