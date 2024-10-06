@@ -9,5 +9,5 @@
 4. [comming soon]()
    
 ## Security
-1. Installation_and_configuration [**nftables**]()
+1. Installation_and_configuration [**nftables**](https://github.com/Ssobol7/Debian-Guide-Server-Workstation/blob/main/Workstation/security/nftables_setup.md)
 2. 
