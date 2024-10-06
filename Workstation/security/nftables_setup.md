@@ -151,6 +151,9 @@ To ensure the rules are automatically applied after a reboot:
    sudo nft list ruleset
    ```
    
+   ![nftables](https://github.com/user-attachments/assets/4408991c-8e25-4faa-9dac-045872e26dd2)
+
+
 &nbsp;
 
 --- 
