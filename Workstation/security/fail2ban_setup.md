@@ -44,6 +44,7 @@
    - **maxretry = 3**  Maximum number of failed login attempts before banning an IP.
    - **bantime = 3600**  Duration of the IP ban (in seconds).
    - **findtime = 600**  Time period within which the 3 failed attempts are counted (in seconds).
+&nbsp;
 
 > [!NOTE]
 >
@@ -65,6 +66,7 @@
 
    This tells `Fail2Ban` to use `nftables` for banning IP addresses.
 
+&nbsp;
 > [!NOTE]
 > Make sure that SSH port 22 is enabled in your "nftables" configuration
 
