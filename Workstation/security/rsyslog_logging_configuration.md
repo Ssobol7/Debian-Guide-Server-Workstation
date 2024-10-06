@@ -18,7 +18,7 @@ Before installing `rsyslog`, it is important to check if the socket for system l
 1. **Check the status of `syslog.socket`:**
    Run the following command to check if the socket is active:
    ```bash
-   sudo systemctl status syslog.socket
+   $ sudo systemctl status syslog.socket
    ```
 
    - If the status is **active (running)** or **active (listening)**, then `syslog.socket` is active.
@@ -27,13 +27,13 @@ Before installing `rsyslog`, it is important to check if the socket for system l
 2. **Restart `syslog.socket` (if inactive):**
    If `syslog.socket` is not running, try restarting it:
    ```bash
-   sudo systemctl restart syslog.socket
+   $ sudo systemctl restart syslog.socket
    ```
 
 3. **Diagnosing issues with `syslog.socket`:**
    If restarting fails, check the system logs for error details:
    ```bash
-   sudo journalctl -xe
+   $ sudo journalctl -xe
    ```
 
 ---
@@ -47,26 +47,26 @@ Once you have confirmed that `syslog.socket` is active, you can install and conf
 1. **Install `rsyslog`:**
    Install the `rsyslog` package if it hasn't been installed yet:
    ```bash
-   sudo apt update
-   sudo apt install rsyslog
+   $ sudo apt update
+   $ sudo apt install rsyslog
    ```
 
 2. **Start `rsyslog`:**
    After installation, start the `rsyslog` service:
    ```bash
-   sudo systemctl start rsyslog
+   $ sudo systemctl start rsyslog
    ```
 
 3. **Enable automatic startup for `rsyslog`:**
    To ensure `rsyslog` starts automatically when the system boots, run:
    ```bash
-   sudo systemctl enable rsyslog
+   $ sudo systemctl enable rsyslog
    ```
 
 4. **Check the status of the `rsyslog` service:**
    Verify that the service is running correctly:
    ```bash
-   sudo systemctl status rsyslog
+   $ sudo systemctl status rsyslog
    ```
 
 ---
@@ -76,21 +76,23 @@ Once you have confirmed that `syslog.socket` is active, you can install and conf
 
 ### Step 3: Verifying system logs
 
-1. **View system logs:**
-   To make sure the logs are being written correctly, use the following command:
-   ```bash
-   sudo tail -f /var/log/syslog
-   ```
+**View system logs:**
+To make sure the logs are being written correctly, use the following command:
+```bash
+$ sudo tail -f /var/log/syslog
+```
 
-   This will allow you to see real-time updates of new entries in the system log.
+This will allow you to see real-time updates of new entries in the system log.
 
 ---
+
+&nbsp;
 
 ### Step 4: Diagnosing issues with `rsyslog` and `syslog.socket`
 
 If issues with `rsyslog` or `syslog.socket` persist, use the following command to analyze system errors:
 ```bash
-sudo journalctl -xe
+$ sudo journalctl -xe
 ```
 
 This will help diagnose any potential conflicts or configuration errors that are preventing the logging system from working properly.
