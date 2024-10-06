@@ -91,13 +91,13 @@
 1. **Check the status of `Fail2Ban` and its rules**:
    To check how `Fail2Ban` is working with the SSH jail:
    ```bash
-   sudo fail2ban-client status sshd
+   $ sudo fail2ban-client status sshd
    ```
 
 2. **Manually ban an IP address**:
    To manually ban an IP address using `Fail2Ban`:
    ```bash
-   sudo fail2ban-client set sshd banip <IP-address>
+   $ sudo fail2ban-client set sshd banip <IP-address>
    ```
 
 3. **Unban an IP address**:
