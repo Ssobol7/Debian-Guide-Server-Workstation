@@ -45,7 +45,7 @@
    - **bantime = 3600**  Duration of the IP ban (in seconds).
    - **findtime = 600**  Time period within which the 3 failed attempts are counted (in seconds).
 
-> []Notes:
+> [!NOTE]
 >
 > Ensure that the `/var/log/auth.log` file exists and is being used to track SSH login attempts.
 >  
@@ -64,6 +64,9 @@
    ```
 
    This tells `Fail2Ban` to use `nftables` for banning IP addresses.
+
+> [!NOTE]
+> Make sure that SSH port 22 is enabled in your "nftables" configuration
 
 &nbsp;
 
@@ -123,13 +126,12 @@ maxretry = 5
 
 To diagnose issues with `Fail2Ban`, you can view the logs:
 ```bash
-sudo journalctl -u fail2ban
+$ sudo journalctl -u fail2ban
 ```
 
 &nbsp;
 
 
-  
-> - Make sure that SSH port 22 is enabled in your "nftables" configuration
-
 ---
+
+&nbsp;
