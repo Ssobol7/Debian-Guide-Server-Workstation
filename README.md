@@ -1,6 +1,9 @@
 ![deb](https://github.com/Ssobol7/Debian-12-Xfce-My-Config/assets/135639288/ff4cb72e-08b0-4ce3-9ef2-8562c3365846) 
 
-# **Debian 12 "Bookworm" with Xfce: Configuration Journey**
+# **Debian Installation and Configuration Guide for Server and Workstation"
+
+
+### Debian 12 "Bookworm" with Xfce: Configuration Journey**
 
 In this article, I will walk you through my personal configuration steps for Debian 12, featuring the Xfce desktop environment. I’ll share my experiences, insights, and the reasons behind my choice of Xfce as my preferred working environment.
 
@@ -13,7 +16,7 @@ This article is designed to be helpful for both newcomers just starting with Deb
 ---
 
 
-# 1. **Script for Automated Minimal Installation of Debian 12**
+### 1. **Script for Automated Minimal Installation of Debian 12**
 
 Automating the installation of Debian 12 in a minimal configuration can be done using a preseed file. Below is an example of such a file and instructions on how to use it.
 
