@@ -89,8 +89,6 @@
    }
    ```
 
-3. Save and exit.
-
 &nbsp;
 
 ### Step 3: Applying `nftables` Rules
