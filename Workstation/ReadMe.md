@@ -8,3 +8,6 @@
 3. [Create a bootable usb drive...](https://github.com/Ssobol7/Debian12-Customized-Configuration/blob/main/Workstation/tools/create-bootable-usb.md)
 4. [comming soon]()
    
+## Security
+1. Installation_and_configuration [**nftables**]()
+2. 
