@@ -124,6 +124,17 @@ To ensure the rules are automatically applied after a reboot:
    ![nftables](https://github.com/user-attachments/assets/4408991c-8e25-4faa-9dac-045872e26dd2)
 
 
+    - **table inet filter**: A table created for both IPv4 and IPv6 protocols.
+    - **chain input**: The chain for processing incoming traffic. The default policy is `drop` (block everything that is not explicitly allowed).
+    - **iif "lo" accept**: All connections on the loopback interface (`lo`) are allowed.
+    - **ct state established,related accept**: Already established and related connections are allowed.
+    - **ip protocol icmp drop**: All incoming ICMP requests (ping) are blocked.
+    - **ip6 nexthdr ipv6-icmp drop**: Incoming ICMP requests for IPv6 are blocked.
+    - **tcp dport 22 accept**: Incoming SSH connections (port 22) are allowed.
+    - **tcp dport { 80, 443 } accept**: Incoming HTTP (port 80) and HTTPS (port 443) connections are allowed.
+    - **chain forward**: The chain for forwarding traffic. The default policy is `drop`.
+    - **chain output**: The chain for outgoing traffic. The default policy is `accept` (everything is allowed).
+
 &nbsp;
 
 ### Step 5: Reboot your system and verification
