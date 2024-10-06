@@ -1,7 +1,10 @@
-
 # Fail2Ban 
 
+&nbsp;
+
 ## Installation and configuration 
+
+&nbsp;
 
 ### Step 1: Installing `Fail2Ban`
 
@@ -11,6 +14,8 @@
    $ sudo apt update
    $ sudo apt install fail2ban
    ```
+
+&nbsp;
 
 ### Step 2: Configuring `Fail2Ban`
 
@@ -40,6 +45,14 @@
    - **bantime = 3600**  Duration of the IP ban (in seconds).
    - **findtime = 600**  Time period within which the 3 failed attempts are counted (in seconds).
 
+> []Notes:
+>
+> Ensure that the `/var/log/auth.log` file exists and is being used to track SSH login attempts.
+>  
+>  `$ cat /var/log/auth.log`
+
+&nbsp;
+
 3. Configure interaction with `nftables`:
    
    To allow `Fail2Ban` to block IP addresses using `nftables`, add the following settings in `/etc/fail2ban/jail.local` to use `nftables`:
@@ -52,6 +65,8 @@
 
    This tells `Fail2Ban` to use `nftables` for banning IP addresses.
 
+&nbsp;
+
 ### Step 3: Verifying Configuration
 
 1. Check the configuration for errors:
@@ -63,6 +78,8 @@
    ```bash
    $ sudo systemctl restart fail2ban
    ```
+   
+&nbsp;
 
 ### Step 4: Monitoring and Management
 
@@ -84,6 +101,8 @@
    $ sudo fail2ban-client set sshd unbanip <IP-address>
    ```
 
+&nbsp;
+
 ### Step 5: Additional Configuration for Protecting Other Services
 
 If you want to protect other services (e.g., HTTP or HTTPS), add additional `jail` configurations in the `/etc/fail2ban/jail.local` file. 
@@ -98,6 +117,8 @@ logpath = /var/log/nginx/error.log
 maxretry = 5
 ```
 
+&nbsp;
+
 ### Step 6: Checking Logs
 
 To diagnose issues with `Fail2Ban`, you can view the logs:
@@ -105,11 +126,10 @@ To diagnose issues with `Fail2Ban`, you can view the logs:
 sudo journalctl -u fail2ban
 ```
 
-> Notes:
+&nbsp;
 
-- Ensure that the `/var/log/auth.log` file exists and is being used to track SSH login attempts.
-`$ cat /var/log/auth.log`
+
   
-- Make sure that SSH port 22 is enabled in your "nftables" configuration
+> - Make sure that SSH port 22 is enabled in your "nftables" configuration
 
 ---
