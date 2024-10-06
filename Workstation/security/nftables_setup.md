@@ -1,10 +1,14 @@
-## Packet filtering system **nftables**
+## Packet filtering system `nftables`
 
 &nbsp;
 
 > `nftables` is a packet filtering subsystem in the Linux kernel that provides a unified and optimized replacement for utilities such as `iptables`, `ip6tables`, `arptables`, and `ebtables`.
 >
 > It was designed to simplify the management of network filtering rules, improve performance, and offer more flexible capabilities compared to its predecessors.
+
+&nbsp;
+
+***The configuration below is an example and provides only basic protection, making your server invisible to pings, but accessible via SSH, HTTP and HTTPS, you can change it according to your security requirements for your systemssible via SSH, HTTP, and HTTPS.***
 
 &nbsp;
 
@@ -17,8 +21,6 @@
   - All outgoing connections are allowed.
   - Local connections via the `lo` interface are allowed.
   - All other incoming and forwarded packets are dropped.
-
-***This configuration provides basic protection, making your server invisible to pings but still accessible via SSH, HTTP, and HTTPS.***
 
 &nbsp;
 
